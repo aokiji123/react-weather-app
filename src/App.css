@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login__form,
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  min-height: 90vh;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.75));
+  padding: 25px;
+}
+
+.main {
+  background-image: url('./assets//images/cold-bg.jpeg');
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease-out;
+}
+
+.main.warm {
+  background-image: url('./assets/images/warm-bg.jpeg')
+}
+
+.search__box .search__bar {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  width: 150px;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  padding: 10px;
+  margin: 0 auto 50px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h4 {
+  margin-top: 10px;
+}
+
+.location__box .location {
+  width: 400px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location__box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.weather__box {
+  text-align: center;
+}
+
+.weather__box .temperature {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 15px 25px;
+
+  color: #fff;
+  font-size: 70px;
+}
+
+.weather__box .weather {
+  color: #fff;
+  font-size: 48px;
+}
+
+.login__input {
+  border: 1px solid #000;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.logout__button {
+  width: 100%;
+}
+
+.city__button {
+  width: 100%;
+  margin-bottom: 80px;
+}
+
+.error__button {
+  width: 100%;
+}
