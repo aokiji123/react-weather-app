@@ -14,7 +14,7 @@ const CityPage = () => {
   
   return (
     <div>
-      {weather.cod === '404' ? (
+      {weather.cod === '400' ? (
         <div>
           <h3>Uncorrect city name</h3>
           <button className="error__button" onClick={handleSubmit}>Back</button>
