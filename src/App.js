@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
-import MainPage from './components/MainPage';
-import Login from './components/Login';
+import MainPage from './components/MainPage/MainPage';
+import Login from './components/Login/Login';
 import './App.css';
 
 const App = () => {

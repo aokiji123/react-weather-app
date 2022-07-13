@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { login } from "../features/userSlice"
+import { login } from "../../features/userSlice"
+import './LoginStyles/Login.css'
 
 const Login = () => {
   const [email, setEmail] = useState("")

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate} from 'react-router-dom';
-import { addSearch } from "../features/searchSlice";
+import { addSearch } from "../../features/searchSlice";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { citiesApi, geoApiOptions, api } from "../api";
-import { dateBuilder } from "../dateBuilder";
-import Logout from "./Logout";
+import { citiesApi, geoApiOptions, api } from "../../api";
+import { dateBuilder } from "../../dateBuilder";
+import Logout from "../Logout/Logout";
+import './MainPageStyles/MainPage.css';
 
 const MainPage = () => {
   const [weather, setWeather] = useState([])
@@ -80,8 +81,8 @@ const MainPage = () => {
     <>
     <div className={
       (weather.main !== undefined) ? (
-        (weather.main.temp > 16) ? 'main warm' : 'main'
-      ) : 'main'}
+        (weather.main.temp > 16) ? "main__warm" : "main"
+      ) : "main"}
     >
       <main>
         <form className="search__box" onSubmit={handleSubmit}>
@@ -98,13 +99,13 @@ const MainPage = () => {
         {(weather.main !== undefined) ? (
           <div>
             <h2>Your city:</h2>
-            <div className="location__box">
-              <div className="location">{weather.name}, {weather.sys.country}</div>
-              <div className="date">{dateBuilder(new Date())}</div>
+            <div className="location">
+              <div className="location__data">{weather.name}, {weather.sys.country}</div>
+              <div className="location__date">{dateBuilder(new Date())}</div>
             </div>
-            <div className="weather__box">
-              <div className="temperature">{Math.round(weather.main.temp)}°C</div>
-              <div className="weather">{weather.weather[0].main}</div>
+            <div className="weather">
+              <div className="weather__temp">{Math.round(weather.main.temp)}°C</div>
+              <div className="weather__type">{weather.weather[0].main}</div>
             </div>
           </div>
         ): ('')}

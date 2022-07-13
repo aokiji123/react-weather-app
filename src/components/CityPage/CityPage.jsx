@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { dateBuilder } from "../dateBuilder";
+import { dateBuilder } from "../../dateBuilder";
+import './CityPageStyles/CityPage.css'
 
 const CityPage = () => {
 
@@ -17,7 +18,7 @@ const CityPage = () => {
       {weather.cod === '400' ? (
         <div>
           <h3>Uncorrect city name</h3>
-          <button className="error__button" onClick={handleSubmit}>Back</button>
+          <button className="button__error" onClick={handleSubmit}>Back</button>
         </div>
       ) : (
         <>
@@ -27,16 +28,16 @@ const CityPage = () => {
             ) : 'main'}
         >
           <main>
-            <button className="city__button" onClick={handleSubmit}>Back</button>
+            <button className="button__city" onClick={handleSubmit}>Back</button>
             {(weather.main !== undefined) ? (
               <div>
-                <div className="location__box">
-                  <div className="location">{weather.name}, {weather.sys.country}</div>
-                  <div className="date">{dateBuilder(new Date())}</div>
+                <div className="location">
+                  <div className="location__data">{weather.name}, {weather.sys.country}</div>
+                  <div className="location__date">{dateBuilder(new Date())}</div>
                 </div>
-                <div className="weather__box">
-                  <div className="temperature">{Math.round(weather.main.temp)}°C</div>
-                  <div className="weather">{weather.weather[0].main}</div>
+                <div className="weather">
+                  <div className="weather__temp">{Math.round(weather.main.temp)}°C</div>
+                  <div className="weather__type">{weather.weather[0].main}</div>
                 </div>
               </div>
             ): ('')}

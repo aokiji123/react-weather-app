@@ -6,8 +6,9 @@ import {
   Route,
 } from "react-router-dom";
 import App from './App';
-import MainPage from './components/MainPage';
-import CityPage from './components/CityPage';
+
+import MainPage from './components/MainPage/MainPage';
+import CityPage from './components/CityPage/CityPage'
 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
