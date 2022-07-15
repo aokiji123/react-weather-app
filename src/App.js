@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div>
-      {user ? <MainPage/> : <Login/>}
+      {user ? <MainPage /> : <Login />}
     </div>
   )
 }

@@ -1,18 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import App from './App';
-
-import MainPage from './components/MainPage/MainPage';
-import CityPage from './components/CityPage/CityPage'
+import { BrowserRouter } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from './redux/store'
+import MyRoutes from './components/MyRoutes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,11 +13,7 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <Routes>
-            <Route path="main" element={<MainPage />} />
-            <Route path="city" element={<CityPage />} />
-            <Route index element={<App />} />
-          </Routes>
+          <MyRoutes />
         </PersistGate>
       </Provider>
     </BrowserRouter>
